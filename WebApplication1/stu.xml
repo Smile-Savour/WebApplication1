@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Student xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Tom</Name>
+  <Sex>男</Sex>
+  <Class>大一</Class>
+  <Age>29</Age>
+  <Weight>58</Weight>
+</Student>
