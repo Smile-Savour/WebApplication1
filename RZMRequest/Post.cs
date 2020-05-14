@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace RZMRequest
 {
@@ -46,8 +48,8 @@ namespace RZMRequest
                     {
                         writer = request.GetRequestStream();//获取用于写入请求数据的Stream对象
                     }
-                    catch (Exception e)
-                    {
+                    catch (Exception)
+                    {                       
                         writer = null;
                         Console.Write("连接服务器失败!");
                     }
@@ -105,7 +107,7 @@ namespace RZMRequest
                     {
                         writer = request.GetRequestStream();//获取用于写入请求数据的Stream对象
                     }
-                    catch (Exception e)
+                    catch (Exception)
                     {
                         writer = null;
                         Console.Write("连接服务器失败!");
@@ -135,6 +137,22 @@ namespace RZMRequest
         {
             json = 0 ,
             form = 1
+        }
+
+
+        /// <summary>
+        /// 需要WebService支持Post调用
+        /// </summary>
+        public static XmlDocument QueryPostWebService(String URL, String MethodName, Hashtable Pars)
+        {
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(URL + "/" + MethodName);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            Common.SetWebRequest(request);
+            byte[] data = Common.EncodePars(Pars);
+            Common.WriteRequestData(request, data);
+
+            return Common.ReadXmlResponse(request.GetResponse());
         }
     }
 }

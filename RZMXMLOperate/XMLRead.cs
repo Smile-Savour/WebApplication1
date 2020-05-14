@@ -24,13 +24,29 @@ namespace RZMXMLOperate
             {
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.Load(xmlFilePath);
+
                 using (StringReader sr = new StringReader(xmlDoc.InnerXml))
                 {
                     XmlSerializer serializer = new XmlSerializer(typeof(T));
+                    var a = serializer.Deserialize(sr);
                     return serializer.Deserialize(sr) as T;
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
+            {                                                                                                       
+                return null;
+            }
+        }
+
+        public static string GetXmlstr(string xmlFilePath)
+        {
+            try
+            {
+                XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.Load(xmlFilePath);
+                return "";
+            }
+            catch (Exception)
             {
                 return null;
             }
@@ -39,7 +55,7 @@ namespace RZMXMLOperate
         /// 获取XML根节点
         /// </summary>
         /// <param name="xmlFilePath">XML文件路径</param>
-        /// <returns></returns>
+        ///  <returns></returns>
         public static XElement GetXMLFileRootName(string xmlFilePath)
         {
             try
@@ -47,10 +63,10 @@ namespace RZMXMLOperate
                 XDocument file = XDocument.Load(xmlFilePath);
                 return file.Root;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
-        }
+        } 
     }
 }

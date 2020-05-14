@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using RZMDocumentOpreate;
 namespace WindowsFormsApplication1
 {
     /// <summary>
     /// 移除文件指定符号后的内容
     /// </summary>
-    public partial class Form1 : Form
+    public partial class Form1 : MetroFramework.Forms.MetroForm
     {
         public Form1()
         {
@@ -38,14 +38,7 @@ namespace WindowsFormsApplication1
             {
                 try
                 {
-                    List<string> content = new List<string>();
-                    StreamReader sr = new StreamReader(this.label1.Text, Encoding.Default);
-                    String line;
-
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        content.Add(line.ToString());
-                    }
+                    List<string> content = new RZMDocumentOpreate.TxtOpreate().ReadDocumentContentToLineList(this.label1.Text);
 
                     switch (this.comboBox1.SelectedItem.ToString())
                     {
@@ -93,9 +86,7 @@ namespace WindowsFormsApplication1
                 catch (Exception ex)
                 {
                     MessageBox.Show("Wrong!");
-                }
-                
-
+                }                
             }
         }
     }

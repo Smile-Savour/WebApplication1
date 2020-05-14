@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/jquery-1.12.4.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/GetQueryString.js"></script>
+    <script src="../js/md5.js"></script>
+</head>
+<body>
+    <div id="home">
+        <div class="center">
+            <div class="home-one">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox"></label>
+                <span style="font-size:16px;">选中本页</span>
+            </div>
+            <div class="home-two">
+                <div class="fl">检索到：&nbsp;&nbsp;<span id="selectCount"></span>&nbsp;&nbsp;件</div>
+                <div class="fr">总价值：&nbsp;&nbsp;<span id="balanceSum"></span>&nbsp;&nbsp;元</div>
+            </div>
+            <div id="leftData" class="home-the fl">
+                <div id="" class="home-the-o">
+                    <div class="H-one">
+                        <img class="imgo" src="images/quan_03.png" style="vertical-align: middle;width: 14px;" alt="">
+                        1.一种交叉铰链式柔性职称结构[ZH]
+                        <span class="H-one-span">公开</span>
+                    </div>
+                    <div class="H-t"><span>专利类型:</span><span>申请地区：</span></div>
+                    <div class="H-t"><span>申请号：CN201910647934.7</span><span>申请日：2019.07.18</span><span>授权日：</span></div>
+                    <div class="H-t"><span>申请（专利权）人：[吉林]</span><span>许可使用情况</span></div>
+                    <div class="H-t"><span>专利申请人或者专利权人及变更情况:</span><span>专利审批阶段：</span></div>
+                    <div class="H-t"><span>专利权的终止：</span><span>专利权的恢复：</span><span>专利权的质押：</span></div>
+                    <div class="H-t"><span>是否涉及法律诉讼或者处于复审，宣告无效状态：</span></div>
+                </div>
+                <div class="home-the-o">
+                    <div class="H-one">
+                        <img class="imgo" src="images/quan_03.png" style="vertical-align: middle;width: 14px;" alt="">
+                        2.一种交叉铰链式柔性职称结构[ZH]
+                        <span class="H-one-span">公开</span>
+                    </div>
+                    <div class="H-t"><span>专利类型:</span><span>申请地区：</span></div>
+                    <div class="H-t"><span>申请号：CN201910647934.7</span><span>申请日：2019.07.18</span><span>授权日：</span></div>
+                    <div class="H-t"><span>申请（专利权）人：[吉林]</span><span>许可使用情况</span></div>
+                    <div class="H-t"><span>专利申请人或者专利权人及变更情况:</span><span>专利审批阶段：</span></div>
+                    <div class="H-t"><span>专利权的终止：</span><span>专利权的恢复：</span><span>专利权的质押：</span></div>
+                    <div class="H-t"><span>是否涉及法律诉讼或者处于复审，宣告无效状态：</span></div>
+                </div>
+                <div class="home-the-o">
+                    <div class="H-one">
+                        <img class="imgo" src="images/quan_03.png" style="vertical-align: middle;width: 14px;" alt="">
+                        3.一种交叉铰链式柔性职称结构[ZH]
+                        <span class="H-one-span">公开</span>
+                    </div>
+                    <div class="H-t"><span>专利类型:</span><span>申请地区：</span></div>
+                    <div class="H-t"><span>申请号：CN201910647934.7</span><span>申请日：2019.07.18</span><span>授权日：</span></div>
+                    <div class="H-t"><span>申请（专利权）人：[吉林]</span><span>许可使用情况</span></div>
+                    <div class="H-t"><span>专利申请人或者专利权人及变更情况:</span><span>专利审批阶段：</span></div>
+                    <div class="H-t"><span>专利权的终止：</span><span>专利权的恢复：</span><span>专利权的质押：</span></div>
+                    <div class="H-t"><span>是否涉及法律诉讼或者处于复审，宣告无效状态：</span></div>
+                </div>
+            </div>
+            <div class="home-fou fr">
+                <div id="TITLE" class="hofou-o">
+
+                </div>
+                <div style="position: relative;height: 80px;">
+                    <div class="home-fping">评估值：<span id="v5"></span>元</div>
+                </div>
+                <div id="main">
+
+                </div>
+                <div class="hofou-t">
+                    <div style="height:40px;line-height:40px;">摘要：</div>
+                    <div id="ABSTR" class="hofou-w">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" id="hid" />
+</body>
+<script>
+    function baobiao(v1,v2,v3,v4,v5) {
+        var myChart = echarts.init(document.getElementById('main'));
+        var option = {
+            title: {
+                text: '价格趋势图'
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: [2014, 2015, 2016, 2017, 2018]
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [{
+                type: 'line',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'top'
+                    }
+                },
+                areaStyle: { normal: {} },
+                data: [v1, v2, v3, v4, v5]
+            }]
+        };
+        myChart.setOption(option);
+    }
+    $('.imgo').click(function () {
+        if ($(this).attr("src") == "images/quan_03.png") {
+            $(this).attr("src", "images/dian.png")
+            $(this).parent().parent().siblings().find('.imgo').attr("src", "images/quan_03.png")
+            $(this).parent().parent().css('background', '#f3f6f7')
+            $(this).parent().parent().siblings().css('background', '#fff')
+        } else {
+            $(this).attr("src", "images/quan_03.png")
+            $(this).parent().parent().css('background', '#fff')
+        }
+    })
+</script>
+</html>
+<script type="text/javascript">
+    if (GetQueryString("data") == null || GetQueryString("sign") == null) {
+        alert("参数缺失，请重新查找！");
+        window.location.replace("/web/select.html");
+    }
+    if (hex_md5(GetQueryString("data")) != GetQueryString("sign")) {
+        alert("参数缺失，请重新查找！");
+        window.location.replace("/web/select.html");
+    }
+    /*************这里是左侧数据初始化开始*********************/
+
+    $.post("/handlers/selectHandler.ashx", { "id": GetQueryString("data"), "tag": "QueryLeft" }, function (result) {
+        if (result == 'false') {
+            alert("申请号或申请人不存在！")
+             window.location.replace("/web/select.html");
+            return;
+        }
+        var jsonStr = eval('(' + result + ')');
+        $("#selectCount").html(jsonStr.total);
+        $("#balanceSum").html(jsonStr.sum == "" ? "0" : jsonStr.sum);
+        var jsonRows = jsonStr.rows;
+        var lefthtml = "";
+
+        for (var i = 0, l = jsonStr.rows.length; i < l; i++) {
+            lefthtml += "<div onclick=readRight('" + jsonRows[i].id + "') class='home-the-o'>";
+            lefthtml += "<div class='H-one'";
+            lefthtml += "   <img class='imgo' src='images/quan_03.png' style='vertical-align: middle;width: 14px;' alt=''>"
+            lefthtml += "<span>" + i + 1 + "." + jsonRows[i].TITLE + "</span>";
+            lefthtml += "<span class='H-one-span'>" + jsonRows[i].open; +"</span>";
+            lefthtml += "</div>";
+            lefthtml += "<div class='H-t'><span>专利类型:" + jsonRows[i].zltype + "</span>";
+            lefthtml += "<span>申请地区：" + jsonRows[i].NCNAME + "</span></div>";
+            lefthtml += "<div class='H-t'><span>申请号：" + jsonRows[i].APNNO + "</span><span>申请日：" + jsonRows[i].APD + "</span><span>授权日：" + jsonRows[i].shouquan + "</span></div>";
+            lefthtml += " <div class='H-t'><span>申请（专利权）人：" + jsonRows[i].APPL + "</span><span>许可使用情况：" + jsonRows[i].xuke + "</span></div>";
+            lefthtml += " <div class='H-t'><span>专利申请人或者专利权人及变更情况:" + jsonRows[i].sqrjbg + "</span><span>专利审批阶段：" + jsonRows[i].shenpi + "</span></div>"
+            lefthtml += " <div class='H-t'><span>专利权的终止：" + jsonRows[i].zhongzhi + "</span>";
+            lefthtml += "<span>专利权的恢复：" + jsonRows[i].huifu + "</span><span>专利权的质押：" + jsonRows[i].zhiya + "</span></div>"
+            lefthtml += " <div class='H-t'><span>是否涉及法律诉讼或者处于复审，宣告无效状态：" + jsonRows[i].falv + "</span></div>"
+            lefthtml += " </div>";
+
+        }
+        $("#leftData").html(lefthtml);
+        readRight(jsonStr.rows[0].id);
+
+
+    });
+    /*************这里是左侧数据初始化结束*********************/
+
+    /*************这里是右侧数据初始化开始*********************/
+    function readRight(id) {
+        $.post("/handlers/selectHandler.ashx", { "id": id, "tag": "QueryRight" }, function (result) {
+            var jsons = eval('(' + result + ')');
+            $("#TITLE").html(jsons.TITLE);
+            $("#ABSTR").html(jsons.ABSTR);
+            $("#v5").html(jsons.v5);
+            baobiao(jsons.v1, jsons.v2, jsons.v3, jsons.v4, jsons.v5);
+        });
+
+    }
+
+
+</script>

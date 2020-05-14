@@ -1,0 +1,459 @@
+﻿namespace WindowsFormsTrainQiangpiao
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows 窗体设计器生成的代码
+
+        /// <summary>
+        /// 设计器支持所需的方法 - 不要修改
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.end_comYear = new System.Windows.Forms.ComboBox();
+            this.start_comYear = new System.Windows.Forms.ComboBox();
+            this.end_ComSecond = new System.Windows.Forms.ComboBox();
+            this.start_ComSecond = new System.Windows.Forms.ComboBox();
+            this.end_ComMinute = new System.Windows.Forms.ComboBox();
+            this.start_ComMinute = new System.Windows.Forms.ComboBox();
+            this.start_ComHour = new System.Windows.Forms.ComboBox();
+            this.end_ComHour = new System.Windows.Forms.ComboBox();
+            this.start_comDate = new System.Windows.Forms.ComboBox();
+            this.end_comDate = new System.Windows.Forms.ComboBox();
+            this.end_commonth = new System.Windows.Forms.ComboBox();
+            this.start_commonth = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.end_comYear);
+            this.groupBox1.Controls.Add(this.start_comYear);
+            this.groupBox1.Controls.Add(this.end_ComSecond);
+            this.groupBox1.Controls.Add(this.start_ComSecond);
+            this.groupBox1.Controls.Add(this.end_ComMinute);
+            this.groupBox1.Controls.Add(this.start_ComMinute);
+            this.groupBox1.Controls.Add(this.start_ComHour);
+            this.groupBox1.Controls.Add(this.end_ComHour);
+            this.groupBox1.Controls.Add(this.start_comDate);
+            this.groupBox1.Controls.Add(this.end_comDate);
+            this.groupBox1.Controls.Add(this.end_commonth);
+            this.groupBox1.Controls.Add(this.start_commonth);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(1, 2);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(833, 100);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "选择时间";
+            // 
+            // end_comYear
+            // 
+            this.end_comYear.FormattingEnabled = true;
+            this.end_comYear.Location = new System.Drawing.Point(36, 72);
+            this.end_comYear.Name = "end_comYear";
+            this.end_comYear.Size = new System.Drawing.Size(55, 20);
+            this.end_comYear.TabIndex = 38;
+            this.end_comYear.SelectedIndexChanged += new System.EventHandler(this.end_comYear_SelectedIndexChanged);
+            // 
+            // start_comYear
+            // 
+            this.start_comYear.FormattingEnabled = true;
+            this.start_comYear.Location = new System.Drawing.Point(36, 40);
+            this.start_comYear.Name = "start_comYear";
+            this.start_comYear.Size = new System.Drawing.Size(55, 20);
+            this.start_comYear.TabIndex = 37;
+            this.start_comYear.SelectedIndexChanged += new System.EventHandler(this.start_comYear_SelectedIndexChanged);
+            // 
+            // end_ComSecond
+            // 
+            this.end_ComSecond.FormattingEnabled = true;
+            this.end_ComSecond.Location = new System.Drawing.Point(466, 72);
+            this.end_ComSecond.Name = "end_ComSecond";
+            this.end_ComSecond.Size = new System.Drawing.Size(55, 20);
+            this.end_ComSecond.TabIndex = 36;
+            this.end_ComSecond.SelectedIndexChanged += new System.EventHandler(this.end_ComSecond_SelectedIndexChanged);
+            // 
+            // start_ComSecond
+            // 
+            this.start_ComSecond.FormattingEnabled = true;
+            this.start_ComSecond.Location = new System.Drawing.Point(466, 40);
+            this.start_ComSecond.Name = "start_ComSecond";
+            this.start_ComSecond.Size = new System.Drawing.Size(55, 20);
+            this.start_ComSecond.TabIndex = 35;
+            this.start_ComSecond.SelectedIndexChanged += new System.EventHandler(this.start_ComSecond_SelectedIndexChanged);
+            // 
+            // end_ComMinute
+            // 
+            this.end_ComMinute.FormattingEnabled = true;
+            this.end_ComMinute.Location = new System.Drawing.Point(380, 72);
+            this.end_ComMinute.Name = "end_ComMinute";
+            this.end_ComMinute.Size = new System.Drawing.Size(55, 20);
+            this.end_ComMinute.TabIndex = 34;
+            this.end_ComMinute.SelectedIndexChanged += new System.EventHandler(this.end_ComMinute_SelectedIndexChanged);
+            // 
+            // start_ComMinute
+            // 
+            this.start_ComMinute.FormattingEnabled = true;
+            this.start_ComMinute.Location = new System.Drawing.Point(380, 40);
+            this.start_ComMinute.Name = "start_ComMinute";
+            this.start_ComMinute.Size = new System.Drawing.Size(55, 20);
+            this.start_ComMinute.TabIndex = 33;
+            this.start_ComMinute.SelectedIndexChanged += new System.EventHandler(this.start_ComMinute_SelectedIndexChanged);
+            // 
+            // start_ComHour
+            // 
+            this.start_ComHour.FormattingEnabled = true;
+            this.start_ComHour.Location = new System.Drawing.Point(293, 40);
+            this.start_ComHour.Name = "start_ComHour";
+            this.start_ComHour.Size = new System.Drawing.Size(55, 20);
+            this.start_ComHour.TabIndex = 32;
+            this.start_ComHour.SelectedIndexChanged += new System.EventHandler(this.start_ComHour_SelectedIndexChanged);
+            // 
+            // end_ComHour
+            // 
+            this.end_ComHour.FormattingEnabled = true;
+            this.end_ComHour.Location = new System.Drawing.Point(293, 72);
+            this.end_ComHour.Name = "end_ComHour";
+            this.end_ComHour.Size = new System.Drawing.Size(55, 20);
+            this.end_ComHour.TabIndex = 31;
+            this.end_ComHour.SelectedIndexChanged += new System.EventHandler(this.end_ComHour_SelectedIndexChanged);
+            // 
+            // start_comDate
+            // 
+            this.start_comDate.FormattingEnabled = true;
+            this.start_comDate.Location = new System.Drawing.Point(204, 40);
+            this.start_comDate.Name = "start_comDate";
+            this.start_comDate.Size = new System.Drawing.Size(55, 20);
+            this.start_comDate.TabIndex = 30;
+            this.start_comDate.SelectedIndexChanged += new System.EventHandler(this.start_comDate_SelectedIndexChanged);
+            // 
+            // end_comDate
+            // 
+            this.end_comDate.FormattingEnabled = true;
+            this.end_comDate.Location = new System.Drawing.Point(204, 72);
+            this.end_comDate.Name = "end_comDate";
+            this.end_comDate.Size = new System.Drawing.Size(55, 20);
+            this.end_comDate.TabIndex = 29;
+            this.end_comDate.SelectedIndexChanged += new System.EventHandler(this.end_comDate_SelectedIndexChanged);
+            // 
+            // end_commonth
+            // 
+            this.end_commonth.FormattingEnabled = true;
+            this.end_commonth.Location = new System.Drawing.Point(121, 72);
+            this.end_commonth.Name = "end_commonth";
+            this.end_commonth.Size = new System.Drawing.Size(55, 20);
+            this.end_commonth.TabIndex = 28;
+            this.end_commonth.SelectedIndexChanged += new System.EventHandler(this.end_commonth_SelectedIndexChanged);
+            // 
+            // start_commonth
+            // 
+            this.start_commonth.FormattingEnabled = true;
+            this.start_commonth.Location = new System.Drawing.Point(121, 40);
+            this.start_commonth.Name = "start_commonth";
+            this.start_commonth.Size = new System.Drawing.Size(55, 20);
+            this.start_commonth.TabIndex = 27;
+            this.start_commonth.SelectedIndexChanged += new System.EventHandler(this.start_commonth_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(441, 76);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "秒：";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(265, 75);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(29, 12);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "时：";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(354, 76);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(29, 12);
+            this.label11.TabIndex = 18;
+            this.label11.Text = "分：";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(97, 76);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(29, 12);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "月：";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(182, 76);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(29, 12);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "日：";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(12, 76);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 12);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "年：";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(441, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "秒：";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(536, 61);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(17, 12);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "至";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(265, 43);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "时：";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(354, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(29, 12);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "分：";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(97, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "月：";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(182, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "日：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "年：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "出发时间：";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Location = new System.Drawing.Point(1, 109);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(833, 54);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "起止车站";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 21);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(53, 12);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "出发站：";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(291, 21);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 12);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "到达站：";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(572, 21);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(41, 12);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "坐席：";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(64, 18);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(195, 20);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(342, 18);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(195, 20);
+            this.comboBox2.TabIndex = 4;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(609, 18);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(127, 20);
+            this.comboBox3.TabIndex = 5;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(835, 520);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox end_ComSecond;
+        private System.Windows.Forms.ComboBox start_ComSecond;
+        private System.Windows.Forms.ComboBox end_ComMinute;
+        private System.Windows.Forms.ComboBox start_ComMinute;
+        private System.Windows.Forms.ComboBox start_ComHour;
+        private System.Windows.Forms.ComboBox end_ComHour;
+        private System.Windows.Forms.ComboBox start_comDate;
+        private System.Windows.Forms.ComboBox end_comDate;
+        private System.Windows.Forms.ComboBox end_commonth;
+        private System.Windows.Forms.ComboBox start_commonth;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox end_comYear;
+        private System.Windows.Forms.ComboBox start_comYear;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+    }
+}
+

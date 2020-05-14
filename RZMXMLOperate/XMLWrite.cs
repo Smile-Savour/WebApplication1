@@ -58,7 +58,7 @@ namespace RZMXMLOperate
                 xml.Save(xmlFilePath);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

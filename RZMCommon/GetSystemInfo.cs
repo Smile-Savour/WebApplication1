@@ -135,8 +135,8 @@ namespace RZMCommon
             string strLocalIP = string.Empty;
             try
             {
-                IPHostEntry ipHost = Dns.Resolve(Dns.GetHostName());
-                IPAddress ipAddress = ipHost.AddressList[0];
+                IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
+                IPAddress ipAddress = ipHost.AddressList[ipHost.AddressList.Count()-1];
                 strLocalIP = ipAddress.ToString();
                 return strLocalIP;
             }
@@ -154,7 +154,7 @@ namespace RZMCommon
             List<string> ipAddressList = new List<string>();
             try
             {
-                IPHostEntry ipHost = Dns.Resolve(Dns.GetHostName());
+                IPHostEntry ipHost = Dns.GetHostEntry(Dns.GetHostName());
                 foreach (IPAddress ipAddress in ipHost.AddressList)
                 {
                     if (!ipAddressList.Contains(ipAddress.ToString()))
@@ -374,7 +374,7 @@ namespace RZMCommon
                 return "unknown";
             }
         }
-
+         
         /// <summary>  
         /// 获取公用桌面路径           
         public static string GetAllUsersDesktopFolderPath()

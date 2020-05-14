@@ -7,6 +7,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using RZMFtpOpreate;
+using RZMSafetyOpreate;
 namespace Example2.Controllers
 {
     public class HomeController : Controller
@@ -28,8 +29,14 @@ namespace Example2.Controllers
 
             //    RZMRequest.Get.GetRequest(str);
             //}
-            
+
+
+            string fileName = "shit.txt";
+
+            string str = fileName.Substring(fileName.LastIndexOf('.'),fileName.Length - fileName.LastIndexOf('.'));
             return View();
+
+
         }
         public ActionResult About()
         {
@@ -44,5 +51,6 @@ namespace Example2.Controllers
 
             return View();
         }
+        
     }
 }

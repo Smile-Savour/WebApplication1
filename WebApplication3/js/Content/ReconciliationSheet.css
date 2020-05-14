@@ -1,0 +1,132 @@
+﻿#divMain {
+    background-color:white;
+    position: relative;
+}
+
+#top {
+    position:relative;
+	margin: 20px 20px 0px 20px;
+	padding: 20px;
+	border: 0px solid #666;
+	background: #FFF;
+	height: 50px;
+    width:1000px;
+	}
+#top2 {
+    position: relative; 
+    margin: 20px 0px 0px 0px; 
+    padding: 5px 50px 10px 20px; 
+    border: 0px solid #666; 
+    background: #faf4cf; 
+    height: 150px; 
+    width: 1050px;
+}
+
+#left {
+	position: absolute;
+	top: 275px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #666;
+	background: #D2E0F2;
+	width: 560px;
+    height:250px;
+	}
+#leftBottom {
+	position:absolute;
+	top: 527px;
+	left: 0px;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #666;
+	width: 560px;
+    height:400px;
+    overflow-x:scroll;
+	}
+
+#right {
+	position: relative;
+	top: 0px;
+	left: 560px; 
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #666;
+	background: #D2E0F2;
+	width: 560px;
+    height:250px;
+	}
+#rightBottom {
+	position: relative;
+	top: 0px;
+	left: 560px;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid #666;
+	width: 560px;
+    height:400px;
+    overflow-x:scroll;
+	}
+
+#btnLeft {
+    	position:absolute;
+        background-color: #D2E0F2;
+        top: 220px;
+	    left: 460px;
+        width:100px; 
+        border:none;
+        background-color: #D2E0F2;
+        outline:0;
+        outline-style:none;
+}
+
+#btnRight {
+    	position:absolute;
+        top: 220px;
+	    left: 460px;
+        width:100px; 
+        border:none;
+        background-color: #D2E0F2;
+        outline:0;
+        outline-style:none;
+
+}
+#tb_left th {
+    border-bottom:1px solid #a19d9d;
+    font-size:x-large;
+    text-align:left;
+    padding-left:30px;
+    
+}
+#tb_left tr {
+    height:50px;
+}
+#tb_left td {
+    width:500px;
+    text-align:left;
+    padding-left:30px;
+
+}
+#tb_right th {
+    border-bottom:1px solid #a19d9d;
+    font-size:x-large;
+    text-align:left;
+    padding-left:30px;
+    
+}
+#tb_right tr {
+    height:50px;
+}
+#tb_right td {
+    width:500px;
+    text-align:left;
+    padding-left:30px;
+
+}
+.red  {
+    color:red;
+}
+
+.blue  {
+    color:blue;
+}

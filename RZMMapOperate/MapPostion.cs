@@ -43,7 +43,7 @@ namespace RZMMapOperate
                 double result = Pointlst.Where(p => p.pointId == l.Min()).FirstOrDefault().pointId;
                 return result;
             }
-            catch (System.Exception ex)
+            catch
             {
                 return 0;
             }           
@@ -65,7 +65,7 @@ namespace RZMMapOperate
                 double result = Pointlst.Where(p => p.pointId == l.Max()).FirstOrDefault().pointId;
                 return result;
             }
-            catch (System.Exception ex)
+            catch
             {
                 return 0;
             }

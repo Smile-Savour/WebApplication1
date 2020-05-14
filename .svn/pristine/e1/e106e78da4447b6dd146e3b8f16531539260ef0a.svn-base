@@ -1,0 +1,85 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace RZMCommon
+{
+    public class Common
+    {
+        /// <summary>
+        /// 创建文件夹路径
+        /// </summary>
+        /// <param name="dicArr">路径层级集合</param>
+        private void CreatePath(List<string> dicArr)
+        {
+            try
+            {
+                string path = "";
+                foreach (var dicName in dicArr)
+                {
+                    path += dicName + "//";
+                    if (!System.IO.Directory.Exists(path))
+                    {
+                        System.IO.Directory.CreateDirectory(path);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        /// <summary>
+        /// List集合转json
+        /// </summary>
+        /// <typeparam name="T">对象类型</typeparam>
+        /// <param name="lst">对象集合</param>
+        /// <returns></returns>
+        public static string ConvertListToJson<T>(List<T> lst)
+        {
+            try
+            {
+                if (lst != null)
+                {
+                    string json = JsonConvert.SerializeObject(lst);
+                    return json;
+                }
+                else
+                    return null;
+            }
+            catch (Exception ex)
+            {
+                return "执行错误：" + ex.Message.ToString();
+            }
+        }
+        /// <summary>
+        /// Json字符串转对象集合
+        /// </summary>
+        /// <typeparam name="T">对象类型</typeparam>
+        /// <param name="json">Json字符串</param>
+        /// <returns></returns>
+        public static List<T> ConvertJsonToList<T>(string json)
+        {
+            try
+            {
+                if (json.Length>0)
+                {
+                    List<T> lst = JsonConvert.DeserializeObject<List<T>>(json);
+                    return lst;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ec)
+            {
+
+                throw;
+            }
+        } 
+
+    }
+}

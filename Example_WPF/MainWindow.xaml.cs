@@ -1,19 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace Example_WPF
@@ -26,26 +18,31 @@ namespace Example_WPF
         /// <summary>
         /// 设置雪花下落速度
         /// </summary>
-        private const Double Speed = 3;//Double.Parse(ConfigurationManager.AppSettings["Speed"].ToString());
+        private Double Speed = Double.Parse(ConfigurationManager.AppSettings["Speed"].ToString());
         /// <summary>
         /// 雪花密度
         /// </summary>
-        int SleepTime = 1000;//int.Parse(ConfigurationManager.AppSettings["SleepTime"].ToString());
+        int SleepTime = int.Parse(ConfigurationManager.AppSettings["SleepTime"].ToString());
         /// <summary>
         /// 雪花最大尺寸
         /// </summary>
-        int snowSize = 50;// int.Parse(Conf igurationManager.AppSettings["snowSize"].ToString());
+        int snowSize =  int.Parse(ConfigurationManager.AppSettings["snowSize"].ToString());
         /// <summary>
         /// 雪花容器
         /// </summary>
-        //private int SnowflakeLen = int.Parse(ConfigurationManager.AppSettings["SnowflakeLen"].ToString()), ReSnowflakeLen = int.Parse(ConfigurationManager.AppSettings["ReSnowflakeLen"].ToString());
-        private const int SnowflakeLen = 35, ReSnowflakeLen = 35;
+        private int SnowflakeLen = int.Parse(ConfigurationManager.AppSettings["SnowflakeLen"].ToString()), ReSnowflakeLen = int.Parse(ConfigurationManager.AppSettings["ReSnowflakeLen"].ToString());
+
+        //private const int SnowflakeLen = 35, ReSnowflakeLen = 35;
+
+        /// <summary>
+        /// 修改配置文件值1、2、3
+        /// </summary>    
+        int mengban = int.Parse(ConfigurationManager.AppSettings["mengban"].ToString());
 
         Image i = new Image();
         private List<Image> Snowflake;
-        private List<Image> ReSnowflake;
+        private List<Image> ReSnowflake; 
         private Boolean[] IsBottom;
-        //private const int SnowflakeLen = 35, ReSnowflakeLen = 35;
         private const int SnowflakeWidth = 10;
         private Random random;
         private List<int> SnowflakeY;
@@ -56,14 +53,42 @@ namespace Example_WPF
         {
             InitializeComponent();
 
+            if (mengban==1)
+            {
+                LoadSnow();
+            }
+            else if(mengban==2)
+            {
+                LoadBackGround();
+            }
+            else if (mengban==3)
+            {
+                LoadBackGround();
+                LoadSnow();
+            }
+        }
+
+        /// <summary>
+        /// 加载灯 笼蒙版
+        /// </summary>
+        private void LoadBackGround()
+        {
+            BitmapImage img = new BitmapImage(new Uri(@"Image/新年.png",UriKind.Relative));
+            this._denglong.Source = img;
+        }
+        /// <summary>
+        /// 加载雪花效果
+        /// </summary>
+        private void LoadSnow()
+        {
             random = new Random();
             Init(@"Image/snow.png", @"Image/snow.png");
 
             ts = new ThreadStart(ThreadFun);
             td = new Thread(ts);
+              RenderOptions.SetBitmapScalingMode(i, BitmapScalingMode.LowQuality);
+             CompositionTarget.Rendering += new EventHandler(Timer_Tick);
 
-            RenderOptions.SetBitmapScalingMode(i, BitmapScalingMode.LowQuality);
-            CompositionTarget.Rendering += new EventHandler(Timer_Tick);
             td.Start();
         }
 
@@ -80,7 +105,7 @@ namespace Example_WPF
             SnowflakeY = new List<int>();
             for (int i = 0; i < SnowflakeLen / 2; i++)
             {
-                pos = random.Next(0, (int)this.ActualWidth);
+                pos = random.Next(0, (int)this.ActualWidth);  
                 SnowflakeY.Add(GetEnd(pos));
                 sf = new Image();
                 sf.Source = x1;
@@ -127,7 +152,6 @@ namespace Example_WPF
             }
             else if (140 <= x && x <= this.ActualHeight)
             {
-
                 z = (int)(0.4743 * x + 126);
                 BD = (int)(0.1423 * x + 167);
                 y = random.Next(BD, z);
@@ -142,7 +166,6 @@ namespace Example_WPF
         }
         private int GetPosY(int x)
         {
-
             int z = 0, y = 0;
             int BD;
             if (x <= 140)
@@ -152,20 +175,17 @@ namespace Example_WPF
             }
             else if (140 <= x && x <= this.ActualHeight)
             {
-
                 z = (int)(0.4743 * x + 126);
                 BD = (int)(0.1423 * x + 167);
                 y = random.Next(z);
-
             }
             else
             {
                 z = (int)this.ActualHeight;
                 BD = (int)(0.1423 * x + 167);
-                y = random.Next(z);
+                y = random.Next(z); 
             }
             return y;
-
         }
         private void ThreadFun()
         {
@@ -173,28 +193,11 @@ namespace Example_WPF
             
             while (true)
             {
-                //if (Snowflake.Count > 60)
-                //{
-                //    SleepTime = 2000;
-                //}
-                //else if (Snowflake.Count < 50)
-                //{
-                //    SleepTime = 1500;
-                //}
-                //else if (Snowflake.Count < 45)
-                //{
-                //    SleepTime = 1200;
-                //}
-                //else if (Snowflake.Count < 35)
-                //{
-                //    SleepTime = 900;
-                //}
                 for (int i = 0; i < ReSnowflake.Count; i++)
                 {
                     Thread.Sleep(random.Next(SleepTime));
                     this.Dispatcher.Invoke(DispatcherPriority.Normal, (ThreadStart)delegate
                     {
-                        //textBlock4.Text = SleepTime.ToString();
                         pos = random.Next(0, (int)this.ActualWidth);
                         Canvas.SetLeft(ReSnowflake[i], pos);
                         Snowflake.Add(ReSnowflake[i]);
@@ -204,8 +207,14 @@ namespace Example_WPF
                     });
                 }
             }
-
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+ 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            //结束进程
+            Environment.Exit(0);
         }
+
         private void Timer_Tick(object sender, EventArgs e)
         {
             Double top;
@@ -213,8 +222,18 @@ namespace Example_WPF
             {
                 //textBlock1.Text = Snowflake.Count.ToString();
                 top = Canvas.GetTop(Snowflake[i]);
+                if (top < Snowflake[i].Height)
+                {
+                    Snowflake[i].Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    Snowflake[i].Visibility = Visibility.Visible;
+                }
+
                 if (top >= SnowflakeY[i])
                 {
+                    Snowflake[i].Visibility = Visibility.Collapsed;
                     Canvas.SetTop(Snowflake[i], -10);
                     ReSnowflake.Add(Snowflake[i]);
                     Snowflake.RemoveAt(i);
@@ -226,5 +245,7 @@ namespace Example_WPF
                 }
             }
         }
+
+
     }
 }

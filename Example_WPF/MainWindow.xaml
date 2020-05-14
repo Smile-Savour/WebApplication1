@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Example_WPF"
         mc:Ignorable="d"
-        Title="MainWindow" WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized" Topmost="True" Background="Transparent" AllowsTransparency="True">
-    <Canvas RenderOptions.BitmapScalingMode="Fant">
+        Title="MainWindow" WindowStyle="None" ResizeMode="NoResize" WindowState="Maximized" Topmost="True" Background="Transparent" AllowsTransparency="True" Closed="Window_Closed">
+    <Canvas RenderOptions.BitmapScalingMode="Fant" RenderTransformOrigin="0.5,0.484">
         <!--雪花-->
-        <!--<Canvas Name="g" HorizontalAlignment="Stretch" Width="auto" Height="auto" Background="Transparent">
-        </Canvas>-->
+        <Canvas Name="g" HorizontalAlignment="Stretch" Width="auto" Height="auto" Background="Transparent">
+        </Canvas>
+        <Image Name="_denglong"> 
+            
+        </Image>
+        <!--<DocumentViewer x:Name="documentViewer" Height="535" Width="768"/>-->
 
-        
+
         <!--<Canvas.Background>
-            <ImageBrush ImageSource="先进劳模底图.  jpg"  Stretch="Fill" RenderOptions.BitmapScalingMode="Fant"></ImageBrush>
+        
+            <ImageBrush ImageSource="先进劳模底图.jpg"  Stretch="Fill" RenderOptions.BitmapScalingMode="Fant"></ImageBrush>
         </Canvas.Background>-->
 
         <!--<WebBrowser Name="webCrome" Source="https://www.huya.com/dongji?playerflash=1"></WebBrowser>-->
@@ -21,13 +26,5 @@
         <!--<Image Source="E:\Mine\Items\Demos\WebApplication1\Example_WPF\先进劳模底图 - 副本.png" Width="1920" Height="1080" Stretch="Fill" RenderOptions.BitmapScalingMode="Fant">
             
         </Image>-->
-
-
-        <!--<Rectangle  Name="imageRect">
-            <Rectangle.Fill>
-                <ImageBrush x:Name="brush" ImageSource="E:\Mine\Items\Demos\WebApplication1\Example_WPF\先进劳模底图 - 副本.png" UseLayoutRounding="True">
-                </ImageBrush>
-            </Rectangle.Fill>
-        </Rectangle>-->
     </Canvas>
 </Window>
